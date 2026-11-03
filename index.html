@@ -206,6 +206,14 @@ h2.title{font-family:var(--f-serif);font-weight:700;font-size:clamp(26px,4.2vw,4
 .month ol li::before{counter-increment:s;content:counter(s);position:absolute;left:0;top:2px;width:22px;height:22px;border-radius:50%;background:var(--paper-2);font-size:12px;display:grid;place-items:center;color:var(--gold-deep);font-weight:500}
 .month ol li b{display:block;font-weight:500;color:var(--text)}
 .month ol li span{color:var(--muted)}
+.m-take,.m-gift{margin-top:14px;padding:14px 16px;border-radius:12px}
+.m-take{background:var(--ink);color:var(--on-ink)}
+.m-gift{border:1px dashed var(--gold-deep);background:rgba(201,162,99,.08)}
+.m-take h4,.m-gift h4{font-family:var(--f-sans);font-size:12px;letter-spacing:.14em;font-weight:500;margin-bottom:8px}
+.m-take h4{color:var(--gold)}.m-gift h4{color:var(--gold-deep)}
+.m-take li,.m-gift li{position:relative;padding-left:20px;font-size:14px;line-height:1.65;margin-top:5px}
+.m-take li::before{content:"✓";position:absolute;left:0;color:var(--gold);font-size:12px}
+.m-gift li::before{content:"+";position:absolute;left:3px;color:var(--gold-deep);font-weight:700}
 .m-extra{margin-top:12px;padding-top:16px;border-top:1px solid var(--line);display:grid;gap:10px}
 .m-extra p{font-size:13.5px;line-height:1.7;padding:9px 12px;border-radius:10px}
 .m-extra .in{background:rgba(201,162,99,.14)}
@@ -490,7 +498,17 @@ footer a{text-decoration:none;color:var(--on-ink-dim)}footer a:hover{color:var(-
           <li><b>受眾、人設與帳號門面</b><span>他的煩惱與用語、帳號名稱與簡介、語氣指南</span></li>
           <li><b>內容策略</b><span>3 個內容主軸、30 題選題庫、主平台與發文節奏</span></li>
         </ol>
-        <div class="m-extra">
+        <div class="m-take"><h4>這個月結束，你帶走</h4><ul>
+            <li>一句話定位與你的故事</li>
+            <li>語氣指南與帳號門面</li>
+            <li>30 題選題庫與發文節奏</li>
+          </ul></div>
+          <div class="m-gift"><h4>附贈講義與工具包</h4><ul>
+            <li>「30 支你可以馬上拍的影片題目」講義</li>
+            <li>對標帳號拆解表與定位工作單</li>
+            <li>語氣 prompt 起手包</li>
+          </ul></div>
+          <div class="m-extra">
           <p class="in"><b>內在功課</b>看見自己：用教練式的提問，找出你的天賦、卡點與表達方式</p>
           <p class="aiw"><b>AI</b>建立你的語氣 prompt 組，發散選題庫</p>
         </div>
@@ -506,7 +524,17 @@ footer a{text-decoration:none;color:var(--on-ink-dim)}footer a:hover{color:var(-
           <li><b>連續發布 4 週與互動</b><span>批次製作、每週回報、留言與私訊怎麼回</span></li>
           <li><b>數據與調整</b><span>看懂 4 個關鍵數字，找出最有效的 3 篇</span></li>
         </ol>
-        <div class="m-extra">
+        <div class="m-take"><h4>這個月結束，你帶走</h4><ul>
+            <li>至少 4 週的連續發布紀錄</li>
+            <li>10 個鉤子與封面範本</li>
+            <li>你的第一支成品，與一套固定的製作流程</li>
+          </ul></div>
+          <div class="m-gift"><h4>附贈講義與工具包</h4><ul>
+            <li>鉤子公式與貼文、影片腳本範本包</li>
+            <li>AI 剪輯流程包</li>
+            <li>每週數據追蹤表</li>
+          </ul></div>
+          <div class="m-extra">
           <p class="in"><b>內在功課</b>被看見：露臉與表達的卡點，第 6 週期中檢查與低潮陪伴</p>
           <p class="aiw"><b>AI</b>AI 剪輯流程、數據整理</p>
         </div>
@@ -522,7 +550,17 @@ footer a{text-decoration:none;color:var(--on-ink-dim)}footer a:hover{color:var(-
           <li><b>服務頁與銷售內容</b><span>服務介紹頁、預熱到上市的內容計畫</span></li>
           <li><b>成交對話與收款</b><span>諮詢流程、異議回應、付款與合作條款</span></li>
         </ol>
-        <div class="m-extra">
+        <div class="m-take"><h4>這個月結束，你帶走</h4><ul>
+            <li>第一個名單磁鐵與 LINE 動線</li>
+            <li>第一個服務、價格與服務介紹頁</li>
+            <li>成交對話腳本，離第一次被付費只差一步</li>
+          </ul></div>
+          <div class="m-gift"><h4>附贈講義與工具包</h4><ul>
+            <li>名單磁鐵測驗範本（標準版）</li>
+            <li>異議回應清單與合作條款範本</li>
+            <li>結業專屬飛輪藍圖</li>
+          </ul></div>
+          <div class="m-extra">
           <p class="in"><b>內在功課</b>被付費：敢定價、敢開口的價值感功課</p>
           <p class="aiw"><b>AI</b>用測驗範本做名單磁鐵、協助服務頁文案初稿</p>
         </div>
