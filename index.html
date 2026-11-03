@@ -239,7 +239,7 @@ h2.title{font-family:var(--f-serif);font-weight:700;font-size:clamp(26px,4.2vw,4
 @media (max-width:900px){.rhythm{grid-template-columns:1fr 1fr}.beat:nth-child(2){border-right:0}.beat:nth-child(-n+2){border-bottom:1px solid var(--line)}}
 @media (max-width:540px){.rhythm{grid-template-columns:1fr}.beat{border-right:0!important;border-bottom:1px solid var(--line)}.beat:last-child{border-bottom:0}}
 /* ---------- 關於我 ---------- */
-.about-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(30px,6vw,72px);align-items:start}
+.about-grid{display:grid;grid-template-columns:minmax(0,280px) 1fr;gap:clamp(30px,6vw,72px);align-items:start}
 .about-photo{border-radius:20px;overflow:hidden;aspect-ratio:1/1;position:sticky;top:90px;border:1px solid var(--line-ink)}
 .about-photo img{width:100%;height:100%;object-fit:cover;object-position:50% 30%}
 .about-text .big{font-family:var(--f-serif);font-size:clamp(19px,2.4vw,24px);line-height:1.75;margin-top:18px;text-wrap:pretty}
