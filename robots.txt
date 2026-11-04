@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://selfmedia.jas-soul.com/sitemap.xml
