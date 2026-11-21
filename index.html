@@ -2,11 +2,31 @@
 <html lang="zh-Hant-TW">
 <head>
 <meta charset="utf-8">
+<!-- Google Analytics 4（跟 jas-soul.com、作品集同一個資源） -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-79V9EQRSN1"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-79V9EQRSN1');
+// 點 LINE 記成 line_cta_click；點去填意向表單記成 form_cta_click（勾選題的 pain_check 寫在頁尾）
+document.addEventListener('click', function (e) {
+  var a = e.target.closest && e.target.closest('a[href]');
+  if (!a) return;
+  var url = a.href, text = (a.textContent || '').replace(/\s+/g, ' ').trim().slice(0, 60);
+  var section = (a.closest('section') || {}).id || '';
+  if (/line\.me|lin\.ee/.test(url)) {
+    gtag('event', 'line_cta_click', { link_url: url, link_text: text, page_section: section, page_path: location.pathname });
+  } else if (/docs\.google\.com\/forms/.test(url)) {
+    gtag('event', 'form_cta_click', { link_text: text, page_section: section, page_path: location.pathname });
+  }
+}, true);
+</script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>一對一自媒體陪跑｜AI × 短影音 × 行銷，三個月從定位到被付費 · Jas Soul</title>
-<meta name="description" content="三個月一對一自媒體陪跑，給想經營個人品牌、開始副業或用專業接案的人。每週一堂課加學習單，用 AI 加速、用你的聲音說話，從定位、內容到第一次被付費。">
-<meta property="og:title" content="一對一自媒體陪跑｜三個月，從定位走到被付費">
-<meta property="og:description" content="三個月一對一陪跑：定位、內容、AI 剪輯、名單磁鐵到第一次被付費。教你做，不是幫你做。">
+<title>療癒工作者的自媒體三人小班｜8 週，從第一篇貼文到第一次有人來問 · Jas Soul</title>
+<meta name="description" content="給剛開始經營自媒體的療癒工作者：8 週三人小班，懂能量，也懂演算法。從看懂自己的天賦開始，建好帳號、連續發文，走到第一次有人來問。2027/3/9 開課，現在開放意向登記。">
+<meta property="og:title" content="療癒工作者的自媒體三人小班｜我走過的彎路，你不用再走一次">
+<meta property="og:description" content="8 週三人小班，給剛起步的療癒工作者：定位、內容、Threads、AI 剪輯，到第一次有人來問。一步一步帶你學會整套方法。">
 <meta property="og:image" content="https://selfmedia.jas-soul.com/og-v2.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -334,15 +354,84 @@ footer a{text-decoration:none;color:var(--on-ink-dim)}footer a:hover{color:var(-
 .price-note{max-width:820px;margin:24px auto 0;text-align:center;font-size:14px;color:var(--muted)}
 @media (max-width:900px){.price-card{grid-template-columns:1fr}}
 @media (max-width:560px){.price-values li{flex-direction:column;gap:4px}}
+
+/* ===== 三人小班改版（2026-11）===== */
+.price-include li{display:block}
+.price-include li span{display:block}
+.vip-card{margin-top:18px;border:1px solid var(--line);border-radius:20px;background:#fff;padding:26px clamp(22px,4vw,36px);display:grid;grid-template-columns:1fr auto;gap:14px 32px;align-items:center}
+.vip-card .tag{font-family:var(--f-en);font-size:12px;letter-spacing:.24em;color:var(--gold-deep)}
+.vip-card h3{font-family:var(--f-serif);font-size:22px;line-height:1.4;margin:6px 0}
+.vip-card p{color:var(--muted);font-size:14.5px}
+.vip-card .vip-price{font-family:var(--f-serif);font-size:24px;color:var(--text);margin-top:6px}
+@media (max-width:640px){.vip-card{grid-template-columns:1fr}}
+.schedule{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.schedule span{border:1px solid var(--line);border-radius:999px;padding:6px 14px;font-size:14px;background:#fff}
+.schedule b{font-weight:500;color:var(--gold-deep);margin-right:6px}
+.proof-title{padding-top:22px;text-align:center;font-size:13px;letter-spacing:.24em;color:var(--gold)}
+.cta-note{margin-top:14px;font-size:13.5px;color:var(--on-ink-dim)}
+.ic{width:22px;height:22px;flex:none;color:var(--gold-deep);vertical-align:-4px;margin-right:10px}
+.ic-lg{display:block;width:30px;height:30px;margin:0 0 12px}
+.dark .ic,.who.main .ic{color:var(--gold)}
+.diff-row h3{display:flex;align-items:flex-start}
+.diff-row h3 .ic{margin-top:4px}
+.hero-orb{position:absolute;right:-120px;top:50%;width:min(520px,60vw);transform:translateY(-50%);fill:none;stroke:rgba(201,162,99,.18);stroke-width:1;pointer-events:none;z-index:0}
+.hero-orb .dot{fill:rgba(201,162,99,.16);stroke:none}
+.hero .wrap{position:relative;z-index:1}
+@media (max-width:760px){.hero-orb{right:-160px;width:420px;opacity:.6}}
+/* checklist */
+.ck-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.ck{display:grid;grid-template-columns:auto 1fr auto;gap:14px;align-items:center;text-align:left;font:inherit;color:inherit;cursor:pointer;background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px 18px;transition:border-color .25s,background .25s,transform .25s}
+.ck:hover{border-color:var(--gold-deep);transform:translateY(-1px)}
+.ck .ic{margin:0;width:26px;height:26px}
+.ck-text b{display:block;font-family:var(--f-serif);font-size:17px;line-height:1.5;font-weight:700}
+.ck-text small{display:block;margin-top:2px;font-size:14px;color:var(--muted)}
+.ck-box{grid-column:3;grid-row:1;width:26px;height:26px;border-radius:50%;border:1.5px solid var(--line);display:grid;place-items:center;transition:background .25s,border-color .25s}
+.ck-mark{width:16px;height:16px;color:#fff;opacity:0;transition:opacity .2s}
+.ck[aria-pressed="true"]{border-color:var(--gold-deep);background:rgba(201,162,99,.10)}
+.ck[aria-pressed="true"] .ck-box{background:var(--gold-deep);border-color:var(--gold-deep)}
+.ck[aria-pressed="true"] .ck-mark{opacity:1}
+.ck:focus-visible{outline:2px solid var(--gold-deep);outline-offset:2px}
+.ck-result{margin-top:18px;padding:20px clamp(18px,3vw,28px);border-radius:16px;border:1px dashed rgba(125,95,39,.35);background:rgba(201,162,99,.06)}
+.ck-empty{color:var(--muted);font-size:14.5px;text-align:center}
+.ck-head{font-family:var(--f-serif);font-size:18px}
+.ck-head b{color:var(--gold-deep);font-size:22px}
+#ckList{margin-top:10px}
+#ckList li{position:relative;padding:6px 0 6px 22px;font-size:15px;line-height:1.7}
+#ckList li::before{content:"→";position:absolute;left:0;color:var(--gold-deep)}
+#ckList li b{font-weight:500}
+@media (max-width:760px){.ck-grid{grid-template-columns:1fr}}
+/* four live sessions */
+.lives-title{font-family:var(--f-serif);font-size:clamp(20px,2.4vw,26px);margin:clamp(36px,5vw,52px) 0 18px}
+.lives{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.live{background:#fff;border:1px solid var(--line);border-radius:20px;padding:24px clamp(20px,3vw,28px);display:flex;flex-direction:column}
+.live-date{font-family:var(--f-en);font-size:12px;letter-spacing:.2em;color:var(--gold-deep)}
+.live h3{font-family:var(--f-serif);font-size:21px;line-height:1.45;margin:4px 0 12px}
+.live ul{flex:1}
+.live li{position:relative;padding:5px 0 5px 18px;font-size:14.5px;line-height:1.7;color:var(--text)}
+.live li::before{content:"";position:absolute;left:0;top:14px;width:6px;height:6px;border-radius:50%;background:var(--gold)}
+.live-take{margin-top:14px;padding:12px 14px;border-radius:12px;background:var(--ink);color:var(--on-ink);font-size:14px}
+.live-take b{color:var(--gold);font-weight:500;margin-right:10px}
+@media (max-width:760px){.lives{grid-template-columns:1fr}}
+/* small class vs VIP */
+.compare{margin-top:28px}
+.compare-title{font-family:var(--f-serif);font-size:clamp(19px,2.2vw,24px);margin-bottom:14px}
+.compare-scroll{overflow-x:auto;border:1px solid var(--line);border-radius:16px;background:#fff}
+.compare table{width:100%;min-width:520px;border-collapse:collapse;font-size:15px}
+.compare th,.compare td{padding:13px 16px;text-align:left;border-bottom:1px solid var(--line);line-height:1.6}
+.compare tbody tr:last-child th,.compare tbody tr:last-child td{border-bottom:0}
+.compare thead th{font-family:var(--f-serif);font-size:16px;background:var(--paper-2)}
+.compare thead th:nth-child(2){color:var(--gold-deep)}
+.compare tbody th{width:22%;color:var(--muted);font-weight:500}
+@media (prefers-reduced-motion:reduce){.ck,.ck-box,.ck-mark{transition:none}}
 </style>
 <script type="application/ld+json">
 {
  "@context": "https://schema.org",
  "@type": "Service",
  "@id": "https://selfmedia.jas-soul.com/#service",
- "name": "一對一自媒體陪跑",
- "serviceType": "自媒體經營一對一陪跑",
- "description": "三個月一對一自媒體陪跑：定位、內容、AI 剪輯、名單磁鐵到第一次被付費。適合想經營個人品牌、副業或接案的人。",
+ "name": "療癒工作者的自媒體三人小班",
+ "serviceType": "自媒體經營小班陪跑",
+ "description": "8 週三人小班，給剛開始經營自媒體的療癒工作者：定位、內容、Threads 經營、AI 剪輯，到第一次有人來問。另有 12 週一對一 VIP。",
  "url": "https://selfmedia.jas-soul.com/",
  "image": "https://selfmedia.jas-soul.com/og-v2.jpg",
  "areaServed": {
@@ -352,9 +441,12 @@ footer a{text-decoration:none;color:var(--on-ink-dim)}footer a:hover{color:var(-
  "inLanguage": "zh-Hant",
  "audience": {
   "@type": "Audience",
-  "audienceType": "想經營個人品牌、副業或接案的人"
+  "audienceType": "剛開始經營自媒體的療癒、身心靈工作者"
  },
- "offers": {"@type": "Offer", "name": "三個月一對一陪跑（首期）", "price": "26000", "priceCurrency": "TWD", "url": "https://selfmedia.jas-soul.com/#pricing"},
+ "offers": [
+  {"@type": "Offer", "name": "三人小班（早鳥）", "price": "15800", "priceCurrency": "TWD", "url": "https://selfmedia.jas-soul.com/#pricing"},
+  {"@type": "Offer", "name": "一對一 VIP（12 週）", "price": "36000", "priceCurrency": "TWD", "url": "https://selfmedia.jas-soul.com/#pricing"}
+ ],
  "provider": {
   "@type": "Person",
   "@id": "https://jasmine.jas-soul.com/#person",
@@ -382,14 +474,13 @@ footer a{text-decoration:none;color:var(--on-ink-dim)}footer a:hover{color:var(-
     <ul>
       <li><a href="#who">適合誰</a></li>
       <li><a href="#diff">不一樣在哪</a></li>
-      <li><a href="#ai">AI × 自媒體</a></li>
-      <li><a href="#curriculum">課程大綱</a></li>
-      <li><a href="#how">陪跑方式</a></li>
+      <li><a href="#curriculum">8 週內容</a></li>
+      <li><a href="#how">小班怎麼上</a></li>
       <li><a href="#pricing">費用</a></li>
       <li><a href="#about">關於我</a></li>
       <li><a href="#faq">常見問題</a></li>
     </ul>
-    <a class="btn btn-gold" href="#apply">聊聊看</a>
+    <a class="btn btn-gold" href="#apply">登記開課通知</a>
   </div>
 </header>
 
@@ -397,53 +488,65 @@ footer a{text-decoration:none;color:var(--on-ink-dim)}footer a:hover{color:var(-
 
 <!-- ============ Hero ============ -->
 <section class="hero dark" id="top">
+  <svg class="hero-orb" viewBox="0 0 400 400" aria-hidden="true"><circle cx="200" cy="200" r="190"/><circle cx="200" cy="200" r="140"/><circle cx="200" cy="200" r="90"/><circle class="dot" cx="200" cy="200" r="34"/></svg>
   <div class="wrap hero-grid">
     <div>
-      <span class="pill reveal"><i></i>AI × 自媒體 × 行銷｜一對一陪跑</span>
-      <h1 class="reveal">你的專業很有力量，<br>只是還沒被<em>對的人</em><span style="white-space:nowrap">看見。</span></h1>
-      <p class="sub reveal">給想經營個人品牌、開始副業或用專業接案的你，12 週一對一陪跑。<b>用 AI 加速，用你的聲音說話</b>，把你的專業做成穩定被看見、被詢問、被付費的自媒體。</p>
+      <span class="pill reveal"><i></i>療癒工作者的自媒體｜三人小班</span>
+      <h1 class="reveal">你的療癒很有力量，<br>只是還沒被<em>對的人</em><span style="white-space:nowrap">看見。</span></h1>
+      <p class="sub reveal"><b>我走過的彎路，你不用再走一次。</b><br>給剛開始經營自媒體的療癒工作者，8 週三人小班：懂能量，也懂演算法，陪你建好帳號、連續發文，走到第一次有人來問。</p>
       <div class="hero-cta reveal">
-        <a class="btn btn-gold" href="#apply">聊聊看自己適不適合 <span class="arrow">→</span></a>
-        <a class="btn btn-line" href="#curriculum">看 12 週大綱</a>
+        <a class="btn btn-gold" href="https://docs.google.com/forms/d/e/1FAIpQLSedeCYk9P4qn215d0SUP5OypiqgeEjxx3QQ_tACDdlUmwqN9A/viewform" target="_blank" rel="noopener">登記開課通知 <span class="arrow">→</span></a>
+        <a class="btn btn-line" href="#how">看小班怎麼上</a>
       </div>
+      <p class="cta-note reveal">填表約 3 分鐘，不用付費。開放報名時，我會優先通知你。</p>
       <div class="hero-meta reveal">
-        <span>12 週陪跑＋結業復盤</span>
-        <span>每週 1 對 1 ＋ 非同步回饋</span>
+        <span>2027/3/9 開課・每班 3 人</span>
+        <span>8 週・4 次直播＋錄播課程</span>
         <span>露臉、不露臉都能做</span>
       </div>
     </div>
   </div>
 </section>
 
-<section class="proof" aria-label="實績">
+<section class="proof" aria-label="Jasmine 的經歷">
   <div class="wrap">
+    <p class="proof-title">Jasmine 做過的事</p>
     <ul>
-      <li><b>457<small>萬</small></b><span>Threads 3 個月瀏覽</span></li>
-      <li><b>20<small>+</small></b><span>堂線上課程製作</span></li>
-      <li><b>408<small>篇</small></b><span>SEO 內容主導產出</span></li>
-      <li><b>294<small>萬</small></b><span>品牌社群總觸及</span></li>
+      <li><b>457<small>萬</small></b><span>我的 Threads，3 個月瀏覽</span></li>
+      <li><b>20<small>+</small></b><span>參與製作的線上課程</span></li>
+      <li><b>408<small>篇</small></b><span>主導產出的 SEO 文章</span></li>
+      <li><b>294<small>萬</small></b><span>經營品牌社群的總觸及</span></li>
     </ul>
   </div>
 </section>
 
-<!-- ============ 痛點 ============ -->
+<!-- ============ 痛點（互動勾選） ============ -->
 <section class="section" id="pain">
   <div class="wrap">
     <div class="section-head reveal">
-      <span class="eyebrow">Sound Familiar</span>
-      <h2 class="title">想經營自媒體，<br>卡住的常常不是努力不夠</h2>
-      <p class="lede">不是你不夠努力。是一般的自媒體課，沒有人告訴你這些事怎麼處理。</p>
+      <span class="eyebrow">Where Are You Stuck</span>
+      <h2 class="title">療癒工作者經營自媒體，<br>你現在卡在哪？</h2>
+      <p class="lede">點選符合你的狀況，看看小班會怎麼陪你處理。這些彎路，我都走過。</p>
     </div>
-    <div class="pain-list">
-      <div class="pain-row reveal"><h3>「有專業，但發文像在對空氣說話」</h3><p>客戶說你很專業、很有幫助，社群上卻幾乎沒人互動，也不知道該講什麼。</p></div>
-      <div class="pain-row reveal"><h3>「不敢露臉，怕被認識的人看到」</h3><p>家人、同事、前同學都在追蹤名單裡。想被看見，又怕被看見。</p></div>
-      <div class="pain-row reveal"><h3>「不想硬銷，談錢又好像違背初心」</h3><p>怕太商業，所以什麼都不敢說清楚；收費標準一改再改，被殺價就心軟。</p></div>
-      <div class="pain-row reveal"><h3>「用 AI 寫出來的，不像我」</h3><p>貼上去就是一股罐頭味。你的故事、語氣、判斷，AI 一個都沒有。</p></div>
-      <div class="pain-row reveal"><h3>「不知道什麼能說、什麼不能說」</h3><p>「保證」「最有效」「一定會」，一不小心就寫成誇大的廣告，又沒人可以問。</p></div>
+    <div class="ck-grid">
+      <button type="button" class="ck reveal" aria-pressed="false" data-fix="第 2 次直播「貼文健檢」，當場改寫你的貼文"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.4 8.4 0 0 1-3.8-.9L3 21l1.9-5.7a8.4 8.4 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.4 8.4 0 0 1 3.8-.9h.5a8.5 8.5 0 0 1 8 8z"/></svg><span class="ck-box"><svg class="ck-mark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg></span><span class="ck-text"><b>「發文像在對空氣說話」</b><small>個案說很有幫助，社群上卻沒什麼人互動。</small></span></button>
+      <button type="button" class="ck reveal" aria-pressed="false" data-fix="錄播課「內容怎麼規劃」，一起整理出 30 個以上的題目"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg><span class="ck-box"><svg class="ck-mark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg></span><span class="ck-text"><b>「不知道要發什麼」</b><small>每次打開 IG，都卡在「今天要寫什麼」。</small></span></button>
+      <button type="button" class="ck reveal" aria-pressed="false" data-fix="錄播課「內容怎麼規劃」，把你的專業說成白話"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg><span class="ck-box"><svg class="ck-mark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg></span><span class="ck-text"><b>「靈性的詞太多，一般人看不懂」</b><small>能量、脈輪、阿卡西，別人卻滑過去了。</small></span></button>
+      <button type="button" class="ck reveal" aria-pressed="false" data-fix="不露臉也能經營，第 1–3 週一起決定你的曝光方式"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10 10 0 0 1 12 20c-7 0-11-8-11-8a18.5 18.5 0 0 1 5.1-5.9M9.9 4.2A9 9 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.2 3.2m-6.7-1.1a3 3 0 1 1-4.2-4.2"/><path d="M1 1l22 22"/></svg><span class="ck-box"><svg class="ck-mark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg></span><span class="ck-text"><b>「不敢露臉，怕被認識的人看到」</b><small>家人、同事都在追蹤名單裡。</small></span></button>
+      <button type="button" class="ck reveal" aria-pressed="false" data-fix="加贈「收費不心虛」，以及第 4 次直播的定價與成交練習"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1.1L12 21.2l7.8-7.7 1-1.1a5.5 5.5 0 0 0 0-7.8z"/></svg><span class="ck-box"><svg class="ck-mark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg></span><span class="ck-text"><b>「收錢，好像違背了初心」</b><small>怕太商業，被殺價就心軟。</small></span></button>
+      <button type="button" class="ck reveal" aria-pressed="false" data-fix="加贈「療癒文案避雷清單」，第 4 次直播逐一檢查你的用語"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg><span class="ck-box"><svg class="ck-mark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg></span><span class="ck-text"><b>「不知道什麼能說、什麼不能說」</b><small>怕寫得像醫療廣告，又沒人可以問。</small></span></button>
+      <button type="button" class="ck reveal" aria-pressed="false" data-fix="第 3 次直播「讓對的人找上門」，練習從貼文走到私訊"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 12h-6l-2 3h-4l-2-3H2"/><path d="M5.5 5.1L2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.5-6.9A2 2 0 0 0 16.8 4H7.2a2 2 0 0 0-1.7 1.1z"/></svg><span class="ck-box"><svg class="ck-mark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg></span><span class="ck-text"><b>「有人看，卻沒有人來問」</b><small>按讚有，私訊和預約卻很少。</small></span></button>
+    </div>
+    <div class="ck-result" id="ckResult" aria-live="polite">
+      <p class="ck-empty">先點選上面符合你的狀況 ↑</p>
+      <div class="ck-filled" hidden>
+        <p class="ck-head">你勾了 <b id="ckCount">0</b> 項，這些都是小班會一起處理的：</p>
+        <ul id="ckList"></ul>
+      </div>
     </div>
     <div class="pivot reveal">
-      <p>這門陪跑要做的，是讓你<em>用真實的自己</em>被看見，<br>再用 AI 把「說出來」這件事變輕、變快。</p>
-      <a class="btn btn-gold" href="#apply">跟我聊聊你的狀態 <span class="arrow">→</span></a>
+      <p>在小班裡，我會告訴你<em>哪裡會卡、怎麼走比較順</em>。<br>你不用變成別人，用你原本說話的方式，就能讓需要你的人找到你。</p>
+      <a class="btn btn-gold" href="https://docs.google.com/forms/d/e/1FAIpQLSedeCYk9P4qn215d0SUP5OypiqgeEjxx3QQ_tACDdlUmwqN9A/viewform" target="_blank" rel="noopener">登記開課通知 <span class="arrow">→</span></a>
     </div>
   </div>
 </section>
@@ -453,31 +556,30 @@ footer a{text-decoration:none;color:var(--on-ink-dim)}footer a:hover{color:var(-
   <div class="wrap">
     <div class="section-head reveal">
       <span class="eyebrow">Who It's For</span>
-      <h2 class="title">這門陪跑，是為誰設計的</h2>
+      <h2 class="title">這個小班，是為誰設計的</h2>
     </div>
     <div class="who-grid">
       <article class="who main reveal">
-        <span class="tag">主要對象</span>
-        <h3>想用專業經營個人品牌的人</h3>
-        <p class="d">你的工作建立在信任上，所以你的自媒體也要長得像「你」。我陪你把專業說清楚、說得安全，也說得讓人想找你。</p>
-        <div class="roles"><span>自由工作者・接案者</span><span>講師・教練・顧問</span><span>身心靈與療癒工作者</span><span>小店家・個人品牌</span><span>剛起步的兼職老師</span></div>
+        <span class="tag">適合你</span>
+        <h3>剛開始經營自媒體的療癒工作者</h3>
+        <p class="d">你的工作建立在信任上，所以你的自媒體也要長得像「你」。我陪你把療癒說清楚、說得安全，也說得讓人想找你。</p>
+        <div class="roles"><span>能量療癒・靈氣</span><span>塔羅・命理</span><span>阿卡西</span><span>身心靈教練</span><span>頌缽老師</span><span>瑜伽老師</span></div>
         <ul>
-          <li>用你自己的語言說專業，不變成罐頭行銷</li>
-          <li>學會不硬銷也能讓人來問的賣法</li>
-          <li>從單次服務，慢慢走到課程與產品階梯</li>
-          <li>處理不敢露臉、不敢開價這些內在卡點</li>
-          <li>寫得有力量，也避開誇大與保證式用語</li>
+          <li>有療癒或身心靈專業，想開始接案</li>
+          <li>有帳號，但不知道要發什麼</li>
+          <li>覺得賣東西很彆扭，不想硬銷</li>
+          <li>每週能投入 3–5 小時練習與發文</li>
+          <li>平日白天可以安排時間上直播</li>
         </ul>
       </article>
       <article class="who side reveal">
-        <span class="tag">也很適合</span>
-        <h3>想開始副業、還在摸索的人</h3>
-        <p class="d">還沒有明確的服務也沒關係。只要你想用真實的自己，建立個人品牌或開始一份副業。</p>
-        <div class="roles"><span>上班族想做副業</span><span>專業工作者</span><span>想不露臉經營</span><span>有帳號但卡關</span></div>
+        <span class="tag">可能不太適合</span>
+        <h3>這幾種情況，先想一想</h3>
+        <p class="d">小班是陪你自己做出來，不是幫你做。下面這些情況，可能有更適合你的方式。</p>
         <ul>
-          <li>從找到方向開始，內在卡點也一起陪你處理</li>
-          <li>找到定位、固定產出、第一次有人來問</li>
-          <li>AI 與短影音的做法，一樣完整帶你做</li>
+          <li>想找人代寫、代剪、代操帳號</li>
+          <li>期待一個月就爆紅</li>
+          <li>平日白天沒辦法上課，或需要每週一對一：可以參考下方的一對一 VIP</li>
         </ul>
       </article>
     </div>
@@ -489,15 +591,15 @@ footer a{text-decoration:none;color:var(--on-ink-dim)}footer a:hover{color:var(-
   <div class="wrap">
     <div class="section-head reveal">
       <span class="eyebrow">What's Different</span>
-      <h2 class="title">跟別的自媒體課、代操，<br>不一樣的六件事</h2>
+      <h2 class="title">跟一般的自媒體課，<br>不一樣的六件事</h2>
     </div>
     <div class="diff-rows">
-      <div class="diff-row reveal"><span class="no">01</span><h3>教你做，不是幫你做</h3><p>我是教練，不是代操。我陪你找定位、教你方法、回饋你的作品，內容由你自己產出，聲音從頭到尾都是你的。</p></div>
-      <div class="diff-row reveal"><span class="no">02</span><h3>懂行銷，也懂人的卡點</h3><p>產品行銷出身，也長期做一對一的陪伴。不只教你方法，也陪你處理不敢露臉、不敢開價這些卡點，並提醒廣告與誇大用語的界線。</p></div>
-      <div class="diff-row reveal"><span class="no">03</span><h3>AI 是工具，聲音是你的</h3><p>先有定位，再用 AI。我自己每天用 AI 做產品、剪影片，教你的是整套流程，而不是一份 prompt 清單。</p></div>
-      <div class="diff-row reveal"><span class="no">04</span><h3>內在卡點一起處理</h3><p>不敢露臉、不敢開價、沒人看就想放棄，這些才是卡關的真正原因。我用教練式的提問，陪你一關一關處理。</p></div>
-      <div class="diff-row reveal"><span class="no">05</span><h3>終點是被付費，不是漲粉</h3><p>12 週從目標卡走到服務定價與成交對話。粉絲數只是過程，有人來問、有人付費才是結果。</p></div>
-      <div class="diff-row reveal"><span class="no">06</span><h3>帳號、網域、名單都屬於你</h3><p>我協助設定，結業時完整交接。你不會被綁在我這裡，離開之後也什麼都帶得走。</p></div>
+      <div class="diff-row reveal"><span class="no">01</span><h3><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>懂能量，也懂演算法</h3><p>我懂脈輪、生命靈數和療癒工作者的語言，也有科技業產品行銷的背景：定位、受眾、漏斗。兩邊都懂，才能把你的療癒說成別人聽得懂的話。</p></div>
+      <div class="diff-row reveal"><span class="no">02</span><h3><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>懂療癒服務的合規用語</h3><p>什麼能說、什麼不能說，怎麼寫得有力量，又不像醫療廣告。這是療癒工作者特別需要、一般自媒體課不會教的。</p></div>
+      <div class="diff-row reveal"><span class="no">03</span><h3><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1.1L12 21.2l7.8-7.7 1-1.1a5.5 5.5 0 0 0 0-7.8z"/></svg>陪你處理「收錢好像違背初心」</h3><p>不敢露臉、不敢開價、覺得賣東西很彆扭，這些才是卡關的真正原因。我們會一起看見它，再找到你自在的說法。</p></div>
+      <div class="diff-row reveal"><span class="no">04</span><h3><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.9"/><path d="M16 3.1a4 4 0 0 1 0 7.8"/></svg>三個人一起，看別人被改也是學習</h3><p>每次直播逐一看三位的作品，另外兩位也能旁聽、給意見。看別人怎麼被修改，常常比自己摸索學得更快。</p></div>
+      <div class="diff-row reveal"><span class="no">05</span><h3><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 6v16l7-4 8 4 7-4V2l-7 4-8-4z"/><path d="M8 2v16"/><path d="M16 6v16"/></svg>帶你學會整套方法</h3><p>從定位、寫文到回私訊，一步一步帶你練。8 週後，這套方法是你自己的，小班結束之後也能繼續經營下去。</p></div>
+      <div class="diff-row reveal"><span class="no">06</span><h3><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="7.5" cy="15.5" r="5.5"/><path d="M11.4 11.6L21 2"/><path d="M16 7l3 3"/><path d="M19 4l2 2"/></svg>帳號、網域、名單都屬於你</h3><p>你經營出來的一切都是你的。小班結束之後，也什麼都帶得走。</p></div>
     </div>
   </div>
 </section>
@@ -507,47 +609,42 @@ footer a{text-decoration:none;color:var(--on-ink-dim)}footer a:hover{color:var(-
   <div class="wrap">
     <div class="section-head reveal">
       <span class="eyebrow">AI × Social Media × Marketing</span>
-      <h2 class="title">AI 加速你的自媒體，<br>從選題一路到成交</h2>
-      <p class="lede">選題、文案、剪輯、數據、名單磁鐵到銷售頁，把 AI 放進每一個環節。我會示範每一步怎麼用，也告訴你哪些要自己來，讓內容更快產出，聽起來還是你。</p>
+      <h2 class="title">AI 幫你省下時間，<br>寫出來還是像你</h2>
+      <p class="lede">選題、文案、剪輯、數據，我會示範 AI 在每一步怎麼用，也告訴你哪些要自己來，讓內容更快產出，聽起來還是你。</p>
       <div class="legend"><span><i class="ai-d"></i>AI 幫你</span><span><i class="me-d"></i>你負責</span></div>
     </div>
 
     <div class="ai-table reveal" role="table" aria-label="AI 與你的分工">
       <div class="ai-row ai-head" role="row"><div role="columnheader">環節</div><div role="columnheader">AI 幫你</div><div role="columnheader">你負責</div></div>
       <div class="ai-row" role="row">
-        <div class="step" role="cell">選題<small>第 3–4 週</small></div>
-        <div class="by-ai" role="cell"><span class="lbl">AI</span>用你的受眾語言，一次發散 30 個題目的候選</div>
+        <div class="step" role="cell">選題<small>內容規劃</small></div>
+        <div class="by-ai" role="cell"><span class="lbl">AI</span>用你受眾的語言，一次發散 30 個題目的候選</div>
         <div class="by-me" role="cell"><span class="lbl">你</span>用真實的經驗與觀點，篩出真正想說的</div>
       </div>
       <div class="ai-row" role="row">
-        <div class="step" role="cell">文案<small>第 5–6 週</small></div>
-        <div class="by-ai" role="cell"><span class="lbl">AI</span>依你的語氣指南訓練專屬 prompt，產出初稿與改寫</div>
+        <div class="step" role="cell">文案<small>內容規劃</small></div>
+        <div class="by-ai" role="cell"><span class="lbl">AI</span>依你的語氣產出初稿與改寫</div>
         <div class="by-me" role="cell"><span class="lbl">你</span>放進你的故事與判斷，最後一定是你定稿</div>
       </div>
       <div class="ai-row" role="row">
-        <div class="step" role="cell">影片<small>第 5–7 週</small></div>
-        <div class="by-ai" role="cell"><span class="lbl">AI</span>AI 剪輯：去掉停頓、轉字幕、裁成 9:16、加標題卡</div>
+        <div class="step" role="cell">影片<small>AI 剪輯</small></div>
+        <div class="by-ai" role="cell"><span class="lbl">AI</span>去掉停頓、轉字幕、裁成 9:16、加標題卡</div>
         <div class="by-me" role="cell"><span class="lbl">你</span>對著鏡頭說出你的話（或選不露臉：配音加畫面）</div>
       </div>
       <div class="ai-row" role="row">
-        <div class="step" role="cell">數據<small>第 8 週</small></div>
+        <div class="step" role="cell">數據<small>第 3 次直播</small></div>
         <div class="by-ai" role="cell"><span class="lbl">AI</span>整理數字，找出表現最好的內容與可能原因</div>
         <div class="by-me" role="cell"><span class="lbl">你</span>判斷這代表什麼，決定下一步怎麼調整</div>
       </div>
       <div class="ai-row" role="row">
-        <div class="step" role="cell">名單磁鐵<small>第 9–10 週</small></div>
-        <div class="by-ai" role="cell"><span class="lbl">AI</span>協助你發想測驗題目和結果文案，快速做出第一版</div>
-        <div class="by-me" role="cell"><span class="lbl">你</span>設計問題與解讀，讓人做完真的被幫到</div>
-      </div>
-      <div class="ai-row" role="row">
-        <div class="step" role="cell">銷售內容<small>第 11–12 週</small></div>
-        <div class="by-ai" role="cell"><span class="lbl">AI</span>協助服務頁文案與預熱貼文初稿，整理常見異議</div>
-        <div class="by-me" role="cell"><span class="lbl">你</span>決定怎麼賣、怎麼說才真誠，並親自完成成交對話</div>
+        <div class="step" role="cell">私訊與服務<small>從貼文到成交</small></div>
+        <div class="by-ai" role="cell"><span class="lbl">AI</span>協助整理常見問題、服務介紹的初稿</div>
+        <div class="by-me" role="cell"><span class="lbl">你</span>決定怎麼說才真誠，並親自回覆每一位客人</div>
       </div>
     </div>
 
     <p class="ai-principle reveal">先定位，再用 AI。你的故事和判斷，AI 沒有，也不該替你寫。</p>
-    <p class="note reveal">AI 剪輯流程需要 Claude 付費方案。</p>
+    <p class="note reveal">AI 剪輯流程需要 Claude Pro 方案（約 US$20／月）。</p>
   </div>
 </section>
 
@@ -555,93 +652,70 @@ footer a{text-decoration:none;color:var(--on-ink-dim)}footer a:hover{color:var(-
 <section class="section" id="curriculum">
   <div class="wrap">
     <div class="section-head reveal">
-      <span class="eyebrow">Curriculum · 12 + 1 Weeks</span>
-      <h2 class="title">三個月，從看見自己到第一次被付費</h2>
-      <p class="lede">每個月一個主題。你不一定從第 1 週的第 1 關開始：第一次聊完，我會看你現在的程度，已經有帳號的人，我們直接從你卡住的那一關切入。</p>
+      <span class="eyebrow">Curriculum · 8 Weeks</span>
+      <h2 class="title">8 週，看見自己、被看見，<br>走到第一次有人來問</h2>
+      <p class="lede">錄播課程照自己的步調看，直播只做錄播做不到的事：看你的作品、給回饋、一起練習。</p>
     </div>
 
     <div class="months">
       <article class="month reveal">
-        <span class="wk">WEEK 1 – 4</span>
-        <h3>第一個月：打地基</h3>
-        <p class="goal">知道自己是誰、要對誰說、說什麼。</p>
+        <svg class="ic ic-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg><span class="wk">WEEK 1 – 3</span>
+        <h3>看見自己</h3>
+        <p class="goal">找到你的天賦和理想客人，帳號從零建立。</p>
         <ol>
-          <li><b>起點與曝光決定</b><span>目標卡、資源盤點、露臉或不露臉</span></li>
-          <li><b>市場觀察與定位</b><span>拆解 5 個對標帳號，寫出一句話定位與差異化</span></li>
-          <li><b>受眾、人設與帳號門面</b><span>他的煩惱與用語、帳號名稱與簡介、語氣指南</span></li>
-          <li><b>內容策略</b><span>3 個內容主軸、30 題選題庫、主平台與發文節奏</span></li>
+          <li><b>開課前：生命靈數＋脈輪報告</b><span>換個角度看見你的天賦、表達方式和可能的卡點</span></li>
+          <li><b>錄播課：找到你的定位</b><span>從報告找天賦、理想客人，服務怎麼說</span></li>
+          <li><b>第 1 次直播（3/9）開學與定位</b><span>逐一解讀報告，現場寫出定位句</span></li>
+          <li><b>帳號門面</b><span>名稱、自介、頭像</span></li>
         </ol>
-        <div class="m-take"><h4>這個月結束，你帶走</h4><ul>
-            <li>一句話定位與你的故事</li>
-            <li>語氣指南與帳號門面</li>
-            <li>30 題選題庫與發文節奏</li>
+        <div class="m-take"><h4>這個階段，你帶走</h4><ul>
+            <li>一句話定位</li>
+            <li>整理好的帳號門面</li>
           </ul></div>
-          <div class="m-gift"><h4>另外附贈</h4><ul>
-            <li>「30 支你可以馬上拍的影片題目」講義</li>
-          </ul></div>
-          <div class="m-extra">
-          <p class="in"><b>內在功課</b>看見自己：用教練式的提問，找出你的天賦、卡點與表達方式</p>
-          <p class="aiw"><b>AI</b>建立你的語氣 prompt 組，發散選題庫</p>
-        </div>
       </article>
 
       <article class="month reveal">
-        <span class="wk">WEEK 5 – 8</span>
-        <h3>第二個月：開始被看見</h3>
-        <p class="goal">穩定產出，找到有效的內容。</p>
+        <svg class="ic ic-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M23 6l-9.5 9.5-5-5L1 18"/><path d="M17 6h6v6"/></svg><span class="wk">WEEK 3 – 6</span>
+        <h3>被看見</h3>
+        <p class="goal">從第一篇寫到第十篇，開始讓對的人找到你。</p>
         <ol>
-          <li><b>鉤子與腳本</b><span>開頭 3 秒的寫法、貼文與影片結構，完成第一個作品</span></li>
-          <li><b>影片支線（選影片的人）</b><span>拍攝基礎、不露臉的畫面、AI 剪出第一支片</span></li>
-          <li><b>連續發布 4 週與互動</b><span>批次製作、每週回報、留言與私訊怎麼回</span></li>
-          <li><b>數據與調整</b><span>看懂 4 個關鍵數字，找出最有效的 3 篇</span></li>
+          <li><b>錄播課：內容怎麼規劃</b><span>IG／Threads 內容分類、寫文公式、題庫</span></li>
+          <li><b>錄播課：Threads 經營</b><span>海巡互動，讓對的人找到你</span></li>
+          <li><b>錄播課：AI 剪輯</b><span>AI 剪短影音的工作流程</span></li>
+          <li><b>第 2 次直播（3/23）內容檢視</b><span>逐一看貼文，當場示範改寫</span></li>
+          <li><b>30 分鐘一對一</b><span>3/24–4/12 之間，針對你的狀況</span></li>
         </ol>
-        <div class="m-take"><h4>這個月結束，你帶走</h4><ul>
-            <li>至少 4 週的連續發布紀錄</li>
-            <li>10 個鉤子與封面範本</li>
-            <li>你的第一支成品，與一套固定的製作流程</li>
+        <div class="m-take"><h4>這個階段，你帶走</h4><ul>
+            <li>30 個以上內容題目</li>
+            <li>開始累積連續發文紀錄</li>
           </ul></div>
-          <div class="m-gift"><h4>另外附贈</h4><ul>
-            <li>鉤子公式與貼文、影片腳本範本包</li>
-          </ul></div>
-          <div class="m-extra">
-          <p class="in"><b>內在功課</b>被看見：露臉與表達的卡點，第 6 週期中檢查與低潮陪伴</p>
-          <p class="aiw"><b>AI</b>AI 剪輯流程、數據整理</p>
-        </div>
       </article>
 
       <article class="month reveal">
-        <span class="wk">WEEK 9 – 12</span>
-        <h3>第三個月：被付費</h3>
-        <p class="goal">有名單、有服務、第一次有人願意付費。</p>
+        <svg class="ic ic-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.6 13.4l-7.2 7.2a2 2 0 0 1-2.8 0L2 12V2h10l8.6 8.6a2 2 0 0 1 0 2.8z"/><path d="M7 7h.01"/></svg><span class="wk">WEEK 6 – 8</span>
+        <h3>被付費的第一步</h3>
+        <p class="goal">互動、回覆私訊，做出第一個服務的雛形。</p>
         <ol>
-          <li><b>名單磁鐵與 LINE 動線</b><span>產品階梯、設計你的第一個測驗或免費資源</span></li>
-          <li><b>第一個服務與定價</b><span>服務規格、價格方案、見證收集</span></li>
-          <li><b>服務頁與銷售內容</b><span>服務介紹頁、預熱到上市的內容計畫</span></li>
-          <li><b>成交對話與收款</b><span>諮詢流程、異議回應、付款與合作條款</span></li>
+          <li><b>錄播課：從貼文到成交</b><span>私訊怎麼回、服務雛形、名單整理</span></li>
+          <li><b>第 3 次直播（4/13）流量與互動</b><span>看數據、找出最好的內容，練習回私訊</span></li>
+          <li><b>第 4 次直播（4/20）成交與結業</b><span>看服務雛形與用語，練習成交對話</span></li>
         </ol>
-        <div class="m-take"><h4>這個月結束，你帶走</h4><ul>
-            <li>第一個名單磁鐵與 LINE 動線</li>
-            <li>第一個服務、價格與服務介紹頁</li>
-            <li>成交對話腳本，離第一次被付費只差一步</li>
+        <div class="m-take"><h4>這個階段，你帶走</h4><ul>
+            <li>至少 4 週的發文紀錄</li>
+            <li>一個服務方案雛形</li>
+            <li>從貼文到私訊的路徑</li>
           </ul></div>
-          <div class="m-gift"><h4>另外附贈</h4><ul>
-            <li>服務規格與定價工作單</li>
-          </ul></div>
-          <div class="m-extra">
-          <p class="in"><b>內在功課</b>被付費：敢定價、敢開口的價值感功課</p>
-          <p class="aiw"><b>AI</b>協助發想名單磁鐵內容、服務頁文案初稿</p>
-        </div>
       </article>
     </div>
 
     <div class="finish reveal">
-      <span class="wk">WEEK 13</span>
+      <span class="wk">BONUS</span>
       <div>
-        <h3>結業：復盤與下一季</h3>
-        <p>三個月前後對照成果報告、什麼有效什麼沒效、下一季計畫，帶著清楚的方向繼續走下去。</p>
+        <h3>療癒工作者專屬單元</h3>
+        <p>療癒文案避雷清單（寫得有力量，又不踩到法規紅線）、收費不心虛（靈性與商業的平衡），另外加碼 SEO 文章入門。</p>
       </div>
     </div>
-    <p class="cur-note reveal">12 週的終點是「第一次被付費」。每個人的起點不同，我們會在一開始聊的時候，一起設定屬於你的版本。</p>
+    <p class="cur-note reveal">8 週的目標是：帳號建好、連續發文 4 週、第一次有人私訊詢問。我們不承諾收入，但每一週都朝這個目標設計。</p>
   </div>
 </section>
 
@@ -649,17 +723,24 @@ footer a{text-decoration:none;color:var(--on-ink-dim)}footer a:hover{color:var(-
 <section class="section alt" id="how">
   <div class="wrap">
     <div class="section-head reveal">
-      <span class="eyebrow">How We Work</span>
-      <h2 class="title">陪跑的方式：每週有人看著你</h2>
-      <p class="lede">每位學員每週約 2 小時的專屬陪伴。不是看完課就放生，每一週都有進度、有回饋。</p>
+      <span class="eyebrow">How It Works</span>
+      <h2 class="title">小班怎麼上：<br>錄播自己看，直播一起練</h2>
+      <p class="lede">每班只收 3 位。直播週二 10:00–12:30，共 4 次，沒辦法參加也可以看錄影補上。</p>
+      
     </div>
     <div class="rhythm reveal">
-      <div class="beat"><span class="day">SUN</span><h3>每週回報</h3><p>週日填一張短表：這週發了幾篇、卡在哪、下週的目標。</p><span class="t">約 10 分鐘</span></div>
-      <div class="beat"><span class="day">1 : 1</span><h3>一對一會談</h3><p>處理這週的卡點與策略，帶你把方法套用在你自己身上。</p><span class="t">每週 1 小時</span></div>
-      <div class="beat"><span class="day">ASYNC</span><h3>非同步陪伴</h3><p>我看你的作品、錄語音回饋，LINE 上的小問題在固定時段回覆。</p><span class="t">每週 1 小時</span></div>
-      <div class="beat"><span class="day">WORKSHEET</span><h3>學習單</h3><p>每堂課一份線上學習單，課後跟著做、填完交回，我幫你批改，給你具體的修改建議。</p><span class="t">每堂一份</span></div>
+      <div class="beat"><svg class="ic ic-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M23 7l-7 5 7 5z"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg><span class="day">LIVE</span><h3>4 次直播</h3><p>每次 2.5 小時：逐一看三位的作品和回饋，另外兩位旁聽給意見，再一起現場練習。</p><span class="t">全程錄影</span></div>
+      <div class="beat"><svg class="ic ic-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M10 8l6 4-6 4z"/></svg><span class="day">VIDEO</span><h3>錄播課程</h3><p>定位、內容規劃、Threads 經營、AI 剪輯、從貼文到成交，共五堂，照自己的步調看。</p><span class="t">隨時觀看</span></div>
+      <div class="beat"><svg class="ic ic-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg><span class="day">1 : 1</span><h3>一對一 30 分鐘</h3><p>安排在第 2 次和第 3 次直播之間，針對你自己的帳號和卡點。</p><span class="t">每人一次</span></div>
+      <div class="beat"><svg class="ic ic-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.4 8.4 0 0 1-3.8-.9L3 21l1.9-5.7a8.4 8.4 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.4 8.4 0 0 1 3.8-.9h.5a8.5 8.5 0 0 1 8 8z"/></svg><span class="day">LINE</span><h3>小班群組</h3><p>8 週期間的小問題，在群組裡問。平日 10:00–18:00，48 小時內回覆。</p><span class="t">8 週</span></div>
     </div>
-    <p class="how-note reveal">另外還有：第 6 週期中檢查、第 6–8 週低潮陪伴、每堂線上學習單與個人紀錄，以及廣告、誇大用語與版權的提醒。</p>
+    <h3 class="lives-title reveal">4 次直播，每次都帶走成果</h3>
+    <div class="lives">
+        <article class="live reveal"><svg class="ic ic-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg><span class="live-date">第 1 次・3/9</span><h3>找到你的定位</h3><ul><li>逐一解讀你的生命靈數＋脈輪報告，找出天賦、表達方式和理想客人</li><li>看三種療癒帳號的經營路線，找到最適合你的那一種</li><li>現場寫出你的定位句，三個人互相回饋</li></ul><p class="live-take"><b>帶走</b>一句話定位、帳號門面修改清單</p></article>
+        <article class="live reveal"><svg class="ic ic-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></svg><span class="live-date">第 2 次・3/23</span><h3>貼文健檢，當場改寫</h3><ul><li>逐一看你發出去的貼文，當場示範怎麼改</li><li>拆解我在 Threads 表現最好的一篇，看見背後的選題和結構</li><li>同一個主題寫三種開頭，現場投票哪一個最抓人</li></ul><p class="live-take"><b>帶走</b>改好的貼文、三種開頭寫法</p></article>
+        <article class="live reveal"><svg class="ic ic-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 12h-6l-2 3h-4l-2-3H2"/><path d="M5.5 5.1L2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.5-6.9A2 2 0 0 0 16.8 4H7.2a2 2 0 0 0-1.7 1.1z"/></svg><span class="live-date">第 3 次・4/13</span><h3>讓對的人找上門</h3><ul><li>看懂你的數據，找出最有效的內容和原因</li><li>拆解一個療癒帳號怎麼從貼文，一路走到私訊和預約</li><li>我扮演潛在客人，你練習回留言、回私訊</li></ul><p class="live-take"><b>帶走</b>下一步的內容方向、私訊回覆範本</p></article>
+        <article class="live reveal"><svg class="ic ic-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.6 13.4l-7.2 7.2a2 2 0 0 1-2.8 0L2 12V2h10l8.6 8.6a2 2 0 0 1 0 2.8z"/><path d="M7 7h.01"/></svg><span class="live-date">第 4 次・4/20</span><h3>你的第一個服務</h3><ul><li>逐一看你的服務雛形：內容、價格、文案和用語</li><li>看療癒文案常見的踩雷案例，知道怎麼寫才安心</li><li>練習成交對話：「多少錢」「有沒有效」「我再想想」怎麼回</li></ul><p class="live-take"><b>帶走</b>可以發布的服務介紹、成交對話範本</p></article>
+    </div>
   </div>
 </section>
 
@@ -670,16 +751,16 @@ footer a{text-decoration:none;color:var(--on-ink-dim)}footer a:hover{color:var(-
     <div class="about-text">
       <div class="reveal">
         <span class="eyebrow">About Jasmine</span>
-        <h2 class="title">從幫品牌說故事，<br>到陪你被看見</h2>
-        <p class="big">我曾在科技業擔任產品行銷與產品經理，經營過品牌社群和自己的個人品牌，也協助講師打造 20+ 堂線上課程。這些年我最常做的事，就是<em>找出受眾在意什麼，再讓對的人看見你</em>。</p>
-        <p class="p">現在我把這些放在一起：用行銷的結構幫你說清楚，用教練式的提問陪你看見卡點，再用 AI 把「說出來」變得輕鬆。我自己的帳號，露臉與不露臉都做過，企劃、口說、剪片都是自己來，所以我教的每一步，都是我走過的。</p>
+        <h2 class="title">懂能量，<br>也懂演算法</h2>
+        <p class="big">我做脈輪解讀和療癒陪伴，也曾在科技業擔任產品行銷與產品經理。這些年我最常做的事，就是<em>找出受眾在意什麼，再讓對的人看見你</em>。</p>
+        <p class="p">經營自己的療癒服務時，定價、怎麼說、怎麼被看見，這些彎路我都走過。現在我把它們整理成小班：用行銷的結構幫你說清楚，用療癒工作者的語言陪你看見卡點，再用 AI 把「說出來」變得輕鬆。我自己的帳號，企劃、口說、剪片都是自己來，所以我教的每一步，都是我走過的。</p>
       </div>
       <div class="skills reveal">
+        <div class="skill"><div class="from"><b>脈輪解讀・生命靈數・教練式陪伴</b>陪人看見自己的模式</div><div class="to">懂療癒工作者的語言，陪你處理不敢露臉、不敢定價的卡點</div></div>
         <div class="skill"><div class="from"><b>科技業產品行銷、產品經理</b>定位、受眾研究、數據與漏斗</div><div class="to">先搞清楚「誰需要你」，再決定說什麼、賣什麼</div></div>
-        <div class="skill"><div class="from"><b>參與 20+ 堂線上課程製作</b>把專業整理成別人學得完的結構</div><div class="to">把你的經驗變成服務、迷你課、名單磁鐵與產品階梯</div></div>
-        <div class="skill"><div class="from"><b>Threads 3 個月 457 萬瀏覽</b>選題企劃與標題設計</div><div class="to">鉤子、選題、內容配比，讓內容觸及非粉絲</div></div>
-        <div class="skill"><div class="from"><b>教練式陪伴・脈輪解讀</b>陪人看見自己的模式</div><div class="to">處理不敢露臉、不敢定價的內在卡點，也懂身心靈、療癒工作者的語言</div></div>
-        <div class="skill"><div class="from"><b>用 AI 做過 3 個產品</b>成功日記、啾啾日記、七脈輪感情導航</div><div class="to">把 AI 放進你的日常流程，也能把你的專業做成互動測驗</div></div>
+        <div class="skill"><div class="from"><b>Threads 3 個月 457 萬瀏覽</b>選題企劃與標題設計</div><div class="to">鉤子、選題、海巡互動，讓內容觸及非粉絲</div></div>
+        <div class="skill"><div class="from"><b>參與 20+ 堂線上課程製作</b>把專業整理成別人學得完的結構</div><div class="to">把你的經驗整理成服務，說得清楚、讓人想來問</div></div>
+        <div class="skill"><div class="from"><b>用 AI 做過 3 個產品</b>成功日記、啾啾日記、七脈輪感情導航</div><div class="to">把 AI 放進你的日常流程，省下時間留給個案</div></div>
       </div>
       <div class="links reveal">
         <a class="btn btn-line" href="https://jasmine.jas-soul.com" target="_blank" rel="noopener">看我的作品集 <span class="arrow">↗</span></a>
@@ -694,16 +775,16 @@ footer a{text-decoration:none;color:var(--on-ink-dim)}footer a:hover{color:var(-
   <div class="wrap">
     <div class="section-head reveal">
       <span class="eyebrow">What You'll Have</span>
-      <h2 class="title">12 週後，你手上會有這些</h2>
-      <p class="lede">每一項都是實際做出來、可以馬上用的成品。</p>
+      <h2 class="title">8 週後，你手上會有這些</h2>
+      <p class="lede">每一項都是你自己實際做出來、可以繼續用下去的。</p>
     </div>
     <ul class="take">
-      <li class="reveal"><span class="n">01</span><div><b>一句話定位與你的故事</b><span>誰來找你、為什麼是你，一眼讀懂</span></div></li>
-      <li class="reveal"><span class="n">02</span><div><b>30 題選題庫與發文節奏</b><span>不再為了「今天發什麼」焦慮</span></div></li>
-      <li class="reveal"><span class="n">03</span><div><b>你的 AI prompt 組與工作流</b><span>選題、初稿、剪輯、數據，一套順手的流程</span></div></li>
-      <li class="reveal"><span class="n">04</span><div><b>第一個名單磁鐵與 LINE 動線</b><span>讓對你有興趣的人留下來</span></div></li>
-      <li class="reveal"><span class="n">05</span><div><b>第一個服務、定價與服務頁</b><span>加上成交對話與異議回應清單</span></div></li>
-      <li class="reveal"><span class="n">06</span><div><b>成果報告與下一季計畫</b><span>下一季怎麼走，一目了然</span></div></li>
+      <li class="reveal"><span class="n">01</span><div><b>一句話定位</b><span>誰來找你、為什麼是你，一眼讀懂</span></div></li>
+      <li class="reveal"><span class="n">02</span><div><b>整理好的帳號門面</b><span>名稱、自介、頭像，像你也讓人想追蹤</span></div></li>
+      <li class="reveal"><span class="n">03</span><div><b>30 個以上內容題目</b><span>不再為了「今天發什麼」焦慮</span></div></li>
+      <li class="reveal"><span class="n">04</span><div><b>至少 4 週的發文紀錄</b><span>你已經開始被看見了</span></div></li>
+      <li class="reveal"><span class="n">05</span><div><b>一個服務方案雛形</b><span>內容、時間、價格，和一篇服務介紹貼文</span></div></li>
+      <li class="reveal"><span class="n">06</span><div><b>從貼文到私訊的路徑</b><span>有人來問的時候，知道怎麼接住</span></div></li>
     </ul>
   </div>
 </section>
@@ -714,39 +795,65 @@ footer a{text-decoration:none;color:var(--on-ink-dim)}footer a:hover{color:var(-
     <div class="section-head reveal" style="text-align:center">
       <span class="eyebrow">Pricing</span>
       <h2 class="title">方案與費用</h2>
-      <p class="lede" style="margin-inline:auto">三個月，每週有人陪你做。內容由你自己產出，我負責方法、陪伴與回饋。</p>
+      <p class="lede" style="margin-inline:auto">現階段先登記，不需要付款。正式開放報名時，填表的人會優先收到通知，早鳥名額也先保留給你。</p>
     </div>
     <div class="price-card reveal">
       <div class="price-main">
-        <p class="price-tag">首期 3 位名額</p>
-        <h3>三個月一對一陪跑</h3>
-        <p class="price-big">NT$26,000</p>
-        <p class="price-next">第二期起 NT$36,000</p>
-        <div class="price-save">
-          <p>總價值 <s>NT$59,000</s></p>
-          <p class="price-now">首期價現省 NT$33,000</p>
-        </div>
-        <p class="price-avg">每週一堂課＋學習單，邊做邊學</p>
-        <a class="btn btn-gold" href="https://line.me/R/oaMessage/%40793hhvkh/?%E6%88%91%E6%83%B3%E4%BA%86%E8%A7%A3%E8%87%AA%E5%AA%92%E9%AB%94%E9%99%AA%E8%B7%91" target="_blank" rel="noopener">LINE 詢問首期名額 <span class="arrow">→</span></a>
+        <p class="price-tag">第一期・2027/3/9 開課・每班 3 人</p>
+        <h3>療癒工作者的自媒體三人小班</h3>
+        <p class="price-big">NT$15,800</p>
+        <p class="price-next">早鳥價（2/15 前）・原價 NT$18,800</p>
+        <p class="price-avg">8 週・4 次直播＋錄播課程</p>
+        <a class="btn btn-gold" href="https://docs.google.com/forms/d/e/1FAIpQLSedeCYk9P4qn215d0SUP5OypiqgeEjxx3QQ_tACDdlUmwqN9A/viewform" target="_blank" rel="noopener">登記開課通知 <span class="arrow">→</span></a>
       </div>
       <div class="price-detail">
-        <h4>每週做中學</h4>
-        <ul class="price-values">
-          <li><span>每週一堂一對一課＋學習單<small>每週一個主題，課堂上直接用你的帳號做。學習單帶回去練，交回來我幫你批改</small></span><em>價值 NT$30,000</em></li>
-          <li><span>作品回饋<small>你做的貼文和影片，我看過後給你具體的修改建議</small></span><em>價值 NT$12,000</em></li>
-          <li><span>卡點偵測與教練對話<small>很快看出你卡在哪裡，用教練式對話一起拆解，讓你在經營、接案和收費上少一點心魔</small></span><em>價值 NT$6,000</em></li>
+        <h4>小班包含</h4>
+        <ul class="price-values price-include">
+          <li><span>開課前：生命靈數＋脈輪報告<small>換個角度看見你的天賦、表達方式和可能的卡點，第一次直播一起變成你的定位</small></span></li>
+          <li><span>4 次直播（每次 2.5 小時）<small>逐一看作品與回饋、一起練習。全程錄影，缺席也能補看</small></span></li>
+          <li><span>錄播課程<small>定位、內容規劃、Threads 經營、AI 剪輯、從貼文到成交，共五堂</small></span></li>
+          <li><span>30 分鐘一對一<small>安排在 3/24–4/12 之間，針對你自己的帳號和卡點</small></span></li>
+          <li><span>8 週 LINE 小班群組<small>平日 10:00–18:00，48 小時內回覆</small></span></li>
         </ul>
         <div class="price-bonus">
           <h4>另外加贈</h4>
-          <ul class="price-values">
-            <li><span>每月補充講義<small>搭配學習單，影片題目、鉤子與腳本範本、服務定價工作單</small></span><em>價值 NT$3,000</em></li>
-            <li><span>名單磁鐵設計引導<small>教你名單磁鐵怎麼設計：要送什麼、怎麼讓人願意留下來，搭配學習單一起完成，我幫你修改</small></span><em>價值 NT$6,000</em></li>
-            <li><span>第 12 週結業復盤<small>一起回顧三個月，訂好下一季計畫</small></span><em>價值 NT$2,000</em></li>
+          <ul class="price-values price-include">
+            <li><span>療癒文案避雷清單<small>寫得有力量，又不踩到法規紅線：什麼能說、什麼不能說，一份清單就查得到</small></span></li>
+            <li><span>收費不心虛<small>靈性與商業的平衡：開價、回應殺價、面對「收錢好像違背初心」</small></span></li>
+            <li><span>SEO 文章入門<small>讓需要你的人，也能從搜尋找到你</small></span></li>
           </ul>
         </div>
       </div>
     </div>
-    <p class="price-note reveal">付款方式：一次付清，或分兩期（開始前 50%，第二個月開始前 50%）。<br>內容由你自己產出，不代寫、不代剪、不代操帳號，也不保證流量或收入。首期名額額滿後，第二期起調整為 NT$36,000。</p>
+
+    <div class="compare reveal">
+      <h3 class="compare-title">小班和一對一，差在哪？</h3>
+      <div class="compare-scroll">
+      <table>
+        <thead><tr><th></th><th>三人小班</th><th>一對一 VIP</th></tr></thead>
+        <tbody>
+          <tr><th>人數</th><td>3 人一起</td><td>只有你</td></tr>
+          <tr><th>期間</th><td>8 週</td><td>12 週</td></tr>
+          <tr><th>一對一時間</th><td>一次 30 分鐘</td><td>每週一次</td></tr>
+          <tr><th>進度</th><td>跟著小班的節奏</td><td>完全依你調整</td></tr>
+          <tr><th>適合</th><td>剛起步、想跟同伴一起前進</td><td>需要深度客製、時間不固定</td></tr>
+          <tr><th>費用</th><td>早鳥 NT$15,800</td><td>NT$36,000 起</td></tr>
+        </tbody>
+      </table>
+      </div>
+    </div>
+
+    <div class="vip-card reveal">
+      <div>
+        <span class="tag">ADVANCED</span>
+        <h3>需要每週一對一？一對一 VIP</h3>
+        <p>12 週，每週一對一，完全依你的狀況客製。每季只收 1–2 位。</p>
+        <p class="vip-price">NT$36,000 起</p>
+      </div>
+      <a class="btn btn-dark" href="https://line.me/R/oaMessage/%40793hhvkh/?%E6%88%91%E6%83%B3%E4%BA%86%E8%A7%A3%E4%B8%80%E5%B0%8D%E4%B8%80%20VIP%20%E9%99%AA%E8%B7%91" target="_blank" rel="noopener">LINE 詢問 VIP <span class="arrow">→</span></a>
+    </div>
+
+    <p class="price-note reveal">一班 3 人，額滿為止；2 人照常開班，開課前一週會確認並通知你。付款方式與退費辦法，會在正式開放報名時公布。<br>內容由你自己產出，不代寫、不代剪、不代操帳號，也不保證流量或收入。</p>
   </div>
 </section>
 
@@ -758,14 +865,17 @@ footer a{text-decoration:none;color:var(--on-ink-dim)}footer a:hover{color:var(-
       <h2 class="title">常見問題</h2>
     </div>
     <div class="faq reveal">
-      <details open><summary>我完全不懂 AI，也跟得上嗎？</summary><p>可以。你只需要會用手機、會打字。每一個 AI 步驟我都會帶著你做，從你自己的內容開始，不用先學一堆工具。</p></details>
-      <details><summary>我不想露臉，可以嗎？</summary><p>可以。「被看見」有兩條路：不露臉（圖文、Threads、配音加畫面）和露臉（口說影片、Reels）。第 1 週我們會先決定你的曝光方式，不是永遠，先選 3 個月，之後可以調整。</p></details>
-      <details><summary>我還沒開始接案，或只是上班族，也適合嗎？</summary><p>適合。陪跑從你現在的專業或想發展的方向開始，第一次聊的時候會一起確認從哪一關切入。不敢表達、不敢被看見、不敢定價這些內在卡點，我也會用教練式的提問陪你處理。</p></details>
-      <details><summary>你會幫我寫文案、幫我剪片嗎？</summary><p>不會，這是我刻意的選擇。我教你方法、陪你做、回饋你的作品，內容由你自己產出。這樣三個月後，你才是真的「會」，而不是依賴我。</p></details>
-      <details><summary>我每週要花多少時間？</summary><p>除了每週約 2 小時的會談與回饋，你需要固定留時間創作與練習。一開始聊的時候，我們會依你的工作與生活，一起盤點現實可行的時數，再訂目標，不會訂一個你做不到的版本。</p></details>
-      <details><summary>需要準備什麼設備？</summary><p>一支手機就能開始拍攝與發文。如果想用 AI 剪輯流程，需要 Claude 付費方案。</p></details>
-      <details><summary>學完會保證有收入嗎？</summary><p>不保證。陪跑的終點是第一次被付費，我們會朝這個目標設計每一週，但實際結果取決於你的起點、投入與市場。我會誠實回饋你的狀況，不會用誇大的承諾招生。</p></details>
-      <details><summary>費用與報名方式？</summary><p>首期 3 位名額為 NT$26,000，第二期起調整為 NT$36,000。可以一次付清，或分兩期：開始前付 50%，第二個月開始前付 50%。先加 LINE 聊聊，確認彼此適合再報名。</p></details>
+      <details open><summary>我完全是自媒體新手，跟得上嗎？</summary><p>可以，這個小班就是為剛起步的人設計的。從看懂自己的天賦、建好帳號開始，一步一步來。只要會用手機、會打字就能開始。</p></details>
+      <details><summary>小班跟一對一有什麼不同？</summary><p>小班含一次 30 分鐘一對一，其他時間是三個人一起上直播，你也能從另外兩位的回饋裡學到東西。需要每週一對一、完全客製的陪伴，請參考一對一 VIP（12 週，NT$36,000 起）。</p></details>
+      <details><summary>生命靈數＋脈輪報告是什麼？</summary><p>它不是要告訴你命運如何，而是從不同的角度，幫你看見自己的天賦、表達方式，以及經營時可能卡住的地方。第一次直播，我們會一起把它變成你的定位。</p></details>
+      <details><summary>我不想露臉，可以嗎？</summary><p>可以。被看見有兩條路：不露臉（圖文、Threads、配音加畫面）和露臉（口說影片、Reels）。我們會依你的狀態一起決定，之後也可以調整。</p></details>
+      <details><summary>直播沒辦法參加怎麼辦？</summary><p>每次直播都會錄影，可以補看。30 分鐘的一對一也可以改期一次。</p></details>
+      <details><summary>我每週要花多少時間？</summary><p>建議每週留 3–5 小時：看錄播課、寫貼文、練習。直播是隔週一次，每次 2.5 小時。</p></details>
+      <details><summary>你會幫我寫文案、幫我剪片嗎？</summary><p>不會，這是我刻意的選擇。我教你方法、陪你做、回饋你的作品，內容由你自己產出。這樣 8 週後，你才是真的「會」，而不是依賴我。</p></details>
+      <details><summary>上完會保證有客人嗎？</summary><p>不保證。8 週的目標是帳號建好、連續發文 4 週、第一次有人私訊詢問。實際結果取決於你的起點與投入，我會誠實回饋你的狀況，不會用誇大的承諾招生。</p></details>
+      <details><summary>人數不足或額滿怎麼辦？</summary><p>一班 3 人，2 人照常開班，開課前一週會確認並通知你。如果只有 1 人報名，可以選擇補差價改成一對一 VIP、保留到下一期，或全額退費。額滿之後會開放候補，並優先通知下一期。</p></details>
+      <details><summary>需要準備什麼設備？</summary><p>一支手機就能開始。如果想用 AI 剪輯流程，需要 Claude Pro 方案（約 US$20／月）。</p></details>
+      <details><summary>怎麼報名？</summary><p>現在先填意向表單，不需要付款，也不代表報名。正式開放報名時，我會優先通知你，早鳥名額也先保留給填表的人。早鳥價到 2/15。</p></details>
     </div>
   </div>
 </section>
@@ -773,15 +883,15 @@ footer a{text-decoration:none;color:var(--on-ink-dim)}footer a:hover{color:var(-
 <!-- ============ 報名 ============ -->
 <section class="section apply dark" id="apply">
   <div class="wrap">
-    <span class="eyebrow reveal">Apply</span>
-    <h2 class="title reveal">先聊聊，看看適不適合彼此</h2>
-    <p class="lede reveal">告訴我你現在的狀態，我們再一起決定從哪一關開始。</p>
-    <div class="steps reveal"><span><b>1</b>私訊或加 LINE 說明狀態</span><span><b>2</b>聊一聊</span><span><b>3</b>確認適合，設定你的 12 週目標</span></div>
+    <span class="eyebrow reveal">Join</span>
+    <h2 class="title reveal">先登記，<br>開放報名時優先通知你</h2>
+    <p class="lede reveal">填表大約 3 分鐘，不需要付款，也不代表報名。早鳥名額會先保留給填表的人。</p>
+    <div class="steps reveal"><span><b>1</b>填意向表單</span><span><b>2</b>開放報名時收到通知</span><span><b>3</b>2/15 前報名享早鳥價</span><span><b>4</b>3/9 開課</span></div>
     <div class="hero-cta reveal">
-      <a class="btn btn-gold" id="applyBtn" href="https://line.me/R/oaMessage/%40793hhvkh/?%E6%88%91%E6%83%B3%E4%BA%86%E8%A7%A3%E8%87%AA%E5%AA%92%E9%AB%94%E9%99%AA%E8%B7%91" target="_blank" rel="noopener">LINE 聊聊看 <span class="arrow">→</span></a>
-      <a class="btn btn-line" href="https://www.instagram.com/jas.soulcareer/" target="_blank" rel="noopener">或私訊 Instagram</a>
+      <a class="btn btn-gold" id="applyBtn" href="https://docs.google.com/forms/d/e/1FAIpQLSedeCYk9P4qn215d0SUP5OypiqgeEjxx3QQ_tACDdlUmwqN9A/viewform" target="_blank" rel="noopener">登記開課通知 <span class="arrow">→</span></a>
+      <a class="btn btn-line" href="https://line.me/R/oaMessage/%40793hhvkh/?%E6%88%91%E6%83%B3%E4%BA%86%E8%A7%A3%E4%B8%89%E4%BA%BA%E5%B0%8F%E7%8F%AD" target="_blank" rel="noopener">有問題，LINE 問我</a>
     </div>
-    <p class="fine reveal">本計畫為自媒體經營之教練式陪伴，不屬於醫療、心理治療或法律服務。學習成果與收入因人而異，不保證特定成效。</p>
+    <p class="fine reveal">本計畫為自媒體經營之教練式陪伴，不屬於醫療、心理治療或法律服務。生命靈數與脈輪報告提供不同角度的觀察與建議，不作為預測或保證。學習成果與收入因人而異，不保證特定成效。</p>
   </div>
 </section>
 </main>
@@ -793,7 +903,7 @@ footer a{text-decoration:none;color:var(--on-ink-dim)}footer a:hover{color:var(-
   </div>
 </footer>
 
-<div class="sticky" id="sticky"><a class="btn btn-gold" href="#apply">聊聊看自己適不適合 →</a></div>
+<div class="sticky" id="sticky"><a class="btn btn-gold" href="#apply">登記開課通知 →</a></div>
 
 <script>
 document.documentElement.classList.add('js');
@@ -822,6 +932,31 @@ document.documentElement.classList.add('js');
 (()=>{ /* LINE prefilled messages only work in the phone app; desktop keeps the add-friend page */
   if(/Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) return;
   document.querySelectorAll('a[href*="line.me/R/oaMessage/"]').forEach(a=>a.href='https://line.me/R/ti/p/@793hhvkh');
+})();
+</script>
+<script>
+(function(){
+  var cards=document.querySelectorAll('.ck'), empty=document.querySelector('.ck-empty'),
+      filled=document.querySelector('.ck-filled'), count=document.getElementById('ckCount'), list=document.getElementById('ckList');
+  function render(){
+    var on=[].filter.call(cards,function(c){return c.getAttribute('aria-pressed')==='true'});
+    count.textContent=on.length; list.innerHTML='';
+    on.forEach(function(c){
+      var li=document.createElement('li'), b=document.createElement('b');
+      b.textContent=c.querySelector('b').textContent+'：';
+      li.appendChild(b); li.appendChild(document.createTextNode(c.getAttribute('data-fix')));
+      list.appendChild(li);
+    });
+    empty.hidden=on.length>0; filled.hidden=on.length===0;
+  }
+  [].forEach.call(cards,function(c){
+    c.addEventListener('click',function(){
+      var now=c.getAttribute('aria-pressed')!=='true';
+      c.setAttribute('aria-pressed',String(now));
+      if(now && typeof gtag==='function'){ gtag('event','pain_check',{item:c.querySelector('b').textContent}); }
+      render();
+    });
+  });
 })();
 </script>
 </body>
